@@ -1,24 +1,114 @@
+# Rails
+.bundle
+db/*.sqlite3
+db/*.sqlite3-journal
+*.log
+log/production.log.*
+tmp
+tmp/**/*
+
+# Documentation
+doc/api
+doc/app
+.yardoc
+.yardopts
+coverage
+
+# Public Uploads
+#public/system/*
+#public/themes/*
+
+# Don't upload precompiled assets
+pubic/assets/*
+
+# Public Cache
+public/javascripts/cache
+public/stylesheets/cache
+public/refinery/*
+
+# Vendor Cache
+vendor/cache
+
+# Acts as Indexed
+index/**/*
+
+# Refinery Specific
+*.tmproj
+*.autobackupbyrefinery.*
+refinerycms-*.gem
+
+# Mac
+.DS_Store
+
+# Windows
+Thumbs.db
+
+# NetBeans
+nbproject
+
+# Eclipse
+.project
+
+# Redcar
+.redcar
+
+# Rubinius
 *.rbc
-capybara-*.html
-.rspec
-/log
-/tmp
-/db/*.sqlite3
-/public/system
-/coverage/
-/spec/tmp
-**.orig
-rerun.txt
-pickle-email-*.html
-config/initializers/secret_token.rb
-config/secrets.yml
 
-## Environment normalisation:
-/.bundle
-/vendor/bundle
+# Vim
+*.swp
+*.swo
 
-# these should all be checked in to normalise the environment:
-# Gemfile.lock, .ruby-version, .ruby-gemset
+# RubyMine
+.idea
 
-# unless supporting rvm < 1.11.0 or doing something fancy, ignore this:
+# E-texteditor
+.eprj
+
+# Backup
+*~
+
+# Capybara Bug
+capybara-*html
+
+# sass
+.sass-cache
+.sass-cache/*
+
+#rvm
 .rvmrc
+.rvmrc.*
+
+# vendor/extensions dummy applications.
+vendor/extensions/**/spec/dummy
+
+
+# sensitive data
+config/database.yml
+config/initializers/secret_token.rb
+db/data.yml
+
+# needed for migration
+db/schema.rb
+
+# test data
+db/datadump/refinery_inquiries_inquiries.yml
+db/datadump/refinery_resources.yml
+db/datadump/refinery_roles.yml
+db/datadump/refinery_roles_users.yml
+db/datadump/refinery_settings.yml
+db/datadump/refinery_users.yml
+db/datadump/refinery_user_plugins.yml
+db/datadump/seo_meta.yml
+db/datadump/sessions.yml
+db/datadump/simple_captcha_data.yml
+
+# rvm files
+.ruby-gemset
+.ruby-version
+
+# bundle cache
+Gemfile.lock
+
+# jQuery map file
+jquery*.map
