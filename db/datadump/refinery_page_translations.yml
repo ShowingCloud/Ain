@@ -1,0 +1,41 @@
+
+---
+refinery_page_translations:
+  columns:
+  - id
+  - refinery_page_id
+  - locale
+  - created_at
+  - updated_at
+  - title
+  - custom_slug
+  - menu_title
+  - slug
+  records: 
+  - - 1
+    - 1
+    - en
+    - 2014-05-04 17:18:30.000000000 Z
+    - 2014-05-04 17:18:30.000000000 Z
+    - Home
+    - 
+    - 
+    - home
+  - - 2
+    - 2
+    - en
+    - 2014-05-04 17:18:30.000000000 Z
+    - 2014-05-04 17:18:30.000000000 Z
+    - Page not found
+    - 
+    - 
+    - page-not-found
+  - - 3
+    - 3
+    - en
+    - 2014-05-04 17:18:31.000000000 Z
+    - 2014-05-04 17:18:31.000000000 Z
+    - About
+    - 
+    - 
+    - about

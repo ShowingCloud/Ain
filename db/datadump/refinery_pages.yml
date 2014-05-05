@@ -1,0 +1,73 @@
+
+---
+refinery_pages:
+  columns:
+  - id
+  - parent_id
+  - path
+  - slug
+  - show_in_menu
+  - link_url
+  - menu_match
+  - deletable
+  - draft
+  - skip_to_first_child
+  - lft
+  - rgt
+  - depth
+  - view_template
+  - layout_template
+  - created_at
+  - updated_at
+  records: 
+  - - 1
+    - 
+    - 
+    - home
+    - true
+    - "/"
+    - "^/$"
+    - false
+    - false
+    - false
+    - 1
+    - 4
+    - 0
+    - 
+    - 
+    - 2014-05-04 17:18:30.000000000 Z
+    - 2014-05-04 17:18:30.000000000 Z
+  - - 2
+    - 1
+    - 
+    - page-not-found
+    - false
+    - 
+    - "^/404$"
+    - false
+    - false
+    - false
+    - 2
+    - 3
+    - 1
+    - 
+    - 
+    - 2014-05-04 17:18:30.000000000 Z
+    - 2014-05-04 17:18:30.000000000 Z
+  - - 3
+    - 
+    - 
+    - about
+    - true
+    - 
+    - 
+    - true
+    - false
+    - false
+    - 5
+    - 6
+    - 0
+    - 
+    - 
+    - 2014-05-04 17:18:31.000000000 Z
+    - 2014-05-04 17:18:31.000000000 Z
