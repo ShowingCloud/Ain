@@ -3,52 +3,75 @@
 	<head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
 		<style>
+		.preLabel{
+			width:100px;
+			text-align:right;
+		}
 		</style>
 	</head>
 	<body>
-	<form>
+	<form id='registerForm'>
 		<div id="leaderInfo">
-			<h3>领队信息</h3>
-			<p><label>姓名</label><input type='text' required="required"/></p>
-			<p><label>性别</label><select><option>男</option><option>女</option></select></p>
-			<p><label>学校</label><input type='text'/></p>
-			<p><label>学院专业</label><input type='text'/></p>
-			<p><label>邮箱</label><input type='text'/></p>
-			<p><label>QQ</label><input type='text'/></p>
-			<p><label>手机</label><input type='text'/></p>
-			<p><label>项目全称</label><input type='text'/></p>
-			<p><label>申报类别</label><select><option>创意组</option><option>技术组</option></select></p>
-			<p><label>队伍人数</label><select><option>3</option><option>4</option><option>5</option></select></p>
+			<p><label class='preLabel'>项目全称</label><input id='project_name' type='text' required='required'/></p>
+			<p><label class='preLabel'>申报类别</label><select id='is_tech'><option value='0'>创意组</option><option value='1'>技术组</option></select></p>
+			<p><label class='preLabel'>队伍人数</label><select id='memberCount' onchange='changeRows()'><option value='3'>3</option><option value='4'>4</option><option value='5'>5</option></select></p>
 		</div>
 		<div id="memberInfo">
-			<h3>其他成员信息</h3>
-			<table>
+			<h3>成员信息</h3>
+			<label>领队</label>
+			<table id='memberInfoTab'>
 				<thead>
 					<tr>
 						<th>姓名</th>
+						<th>性别</th>
+						<th>学校</th>
 						<th>学院专业</th>
+						<th>邮箱</th>
 						<th>QQ</th>
 						<th>手机</th>
+						<th>
 					</tr>
 				</thead>
 				<tfoot></tfoot>
 				<tbody>
 					<tr>
-						<td><input type='text'/></td>
-						<td><input type='text'/></td>
-						<td><input type='text'/></td>
-						<td><input type='text'/></td>
+						<td><input id='name0' type='text'/></td>
+						<td><select id='gender0'><option value='0'>男</option><option value='1'>女</option></select></td>
+						<td><input id='school0' type='text'/></td>
+						<td><input id='major0' type='text'/></td>
+						<td><input id='email0' type='text'/></td>
+						<td><input id='qq0' type='text'/></td>
+						<td><input id='mobile0' type='text'/></td>
 					</tr>
-				</tbody>	
-				</table>
+					<tr>
+						<td><input id='name0' type='text'/></td>
+						<td><select id='gender0'><option value='0'>男</option><option value='1'>女</option></select></td>
+						<td><input id='school0' type='text'/></td>
+						<td><input id='major0' type='text'/></td>
+						<td><input id='email0' type='text'/></td>
+						<td><input id='qq0' type='text'/></td>
+						<td><input id='mobile0' type='text'/></td>
+					</tr>
+					<tr>
+						<td><input id='name0' type='text'/></td>
+						<td><select id='gender0'><option value='0'>男</option><option value='1'>女</option></select></td>
+						<td><input id='school0' type='text'/></td>
+						<td><input id='major0' type='text'/></td>
+						<td><input id='email0' type='text'/></td>
+						<td><input id='qq0' type='text'/></td>
+						<td><input id='mobile0' type='text'/></td>
+					</tr>
+				</tbody>
+			</table>
 		</div>
 		<div id='productInfo'>
 			<h3>项目内容</h3>
-			<p><label>项目目的</label><textarea rows="2"></textarea><input type='checkbox'/><label>还未想好</label></p>
-			<p><label>项目的实际应用价值和现实指导意义</label><textarea rows="2"></textarea><input type='checkbox'/><label>还未想好</label></p>
-			<p><label>项目计划与进度</label><textarea rows="2"></textarea><input type='checkbox'/><label>还未想好</label></p>
+			<p><label class='preLabel'>项目目的</label><textarea id='project_target' rows="2"></textarea><input type='checkbox'/><label>还未想好</label></p>
+			<p><label class='preLabel'>项目的实际应用价值和现实指导意义</label><textarea id='project_meaning' rows="2"></textarea><input type='checkbox'/><label>还未想好</label></p>
+			<p><label class='preLabel'>项目计划与进度</label><textarea id='project_schedule' rows="2"></textarea><input type='checkbox'/><label>还未想好</label></p>
 			<p>
-				<select>
+				<label class='preLabel'>项目种类</label>
+				<select id='project_category'>
 					<option>图书</option>
 					<option>商业</option>
 					<option>商品指南</option>
@@ -73,17 +96,25 @@
 					<option>旅行</option>
 					<option>工具</option>
 				</select>
-				<label>项目摘要</label><textarea rows="2"></textarea>
+			</p>
+			<p>
+				<label class='preLabel'>项目摘要</label><textarea id='project_abstract' rows="2"></textarea>
 				<input type='checkbox'/><label>还未想好</label>
 			</p>
 			<p>
-				<label>项目详细内容</label><textarea rows="2"></textarea>
-				<input type='checkbox'/><label>还未想好</label>
+				<label class='preLabel'>项目详细内容</label><textarea id='project_details' rows="2"></textarea>
+				<input type='checkbox' id='project_details_chk' name='project_details_chk'/><label for='project_details_chk'>还未想好</label>
 			</p>
 		</div>
+		<table class="content_tab" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td class="content_txt08">验证码：</td>
+				<td class="authenticationtd"><%= show_simple_captcha(:label => "human authentication", :placeholder => "input the characters") %></td>                           
+			</tr>
+        </table> 
 		<div id='btnDiv'>
-			<input type='submit' value='提交'/>
-			<input type='button' value='清空'/>
+			<input type='button' value='提交' onclick='register()'/>
+			<input type='button' value='清空' onclick='clearForm()'/>
 		</div>
 		</form>
 	</body>
