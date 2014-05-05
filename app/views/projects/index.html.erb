@@ -1,0 +1,109 @@
+<h1>Listing projects</h1>
+
+<table>
+  <tr>
+    <th>Uuid</th>
+    <th>Name0</th>
+    <th>Gender0</th>
+    <th>School0</th>
+    <th>Major0</th>
+    <th>Email0</th>
+    <th>Qq0</th>
+    <th>Mobile0</th>
+    <th>Name1</th>
+    <th>Gender1</th>
+    <th>School1</th>
+    <th>Major1</th>
+    <th>Email1</th>
+    <th>Qq1</th>
+    <th>Mobile1</th>
+    <th>Name2</th>
+    <th>Gender2</th>
+    <th>School2</th>
+    <th>Major2</th>
+    <th>Email2</th>
+    <th>Qq2</th>
+    <th>Mobile2</th>
+    <th>Name3</th>
+    <th>Gende3</th>
+    <th>School3</th>
+    <th>Major3</th>
+    <th>Email3</th>
+    <th>Qq3</th>
+    <th>Mobile3</th>
+    <th>Name4</th>
+    <th>Gender4</th>
+    <th>School4</th>
+    <th>Major4</th>
+    <th>Email4</th>
+    <th>Qq4</th>
+    <th>Mobile4</th>
+    <th>Project name</th>
+    <th>Is tech</th>
+    <th>Project target</th>
+    <th>Project meaning</th>
+    <th>Project schedule</th>
+    <th>Project category</th>
+    <th>Project abstract</th>
+    <th>Project details</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @projects.each do |project| %>
+  <tr>
+    <td><%= project.uuid %></td>
+    <td><%= project.name0 %></td>
+    <td><%= project.gender0 %></td>
+    <td><%= project.school0 %></td>
+    <td><%= project.major0 %></td>
+    <td><%= project.email0 %></td>
+    <td><%= project.qq0 %></td>
+    <td><%= project.mobile0 %></td>
+    <td><%= project.name1 %></td>
+    <td><%= project.gender1 %></td>
+    <td><%= project.school1 %></td>
+    <td><%= project.major1 %></td>
+    <td><%= project.email1 %></td>
+    <td><%= project.qq1 %></td>
+    <td><%= project.mobile1 %></td>
+    <td><%= project.name2 %></td>
+    <td><%= project.gender2 %></td>
+    <td><%= project.school2 %></td>
+    <td><%= project.major2 %></td>
+    <td><%= project.email2 %></td>
+    <td><%= project.qq2 %></td>
+    <td><%= project.mobile2 %></td>
+    <td><%= project.name3 %></td>
+    <td><%= project.gende3 %></td>
+    <td><%= project.school3 %></td>
+    <td><%= project.major3 %></td>
+    <td><%= project.email3 %></td>
+    <td><%= project.qq3 %></td>
+    <td><%= project.mobile3 %></td>
+    <td><%= project.name4 %></td>
+    <td><%= project.gender4 %></td>
+    <td><%= project.school4 %></td>
+    <td><%= project.major4 %></td>
+    <td><%= project.email4 %></td>
+    <td><%= project.qq4 %></td>
+    <td><%= project.mobile4 %></td>
+    <td><%= project.project_name %></td>
+    <td><%= project.is_tech %></td>
+    <td><%= project.project_target %></td>
+    <td><%= project.project_meaning %></td>
+    <td><%= project.project_schedule %></td>
+    <td><%= project.project_category %></td>
+    <td><%= project.project_abstract %></td>
+    <td><%= project.project_details %></td>
+    <td><%= link_to 'Show', project %></td>
+    <td><%= link_to 'Edit', edit_project_path(project) %></td>
+    <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Project', new_project_path %>
