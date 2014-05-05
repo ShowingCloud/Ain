@@ -49,7 +49,7 @@ Refinery::Pages.configure do |config|
 
   config.use_layout_templates = true
 
-  config.view_template_whitelist = ["home"]
+  config.view_template_whitelist = ["home","register"]
 
   config.use_view_templates = true
 
