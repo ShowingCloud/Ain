@@ -92,6 +92,7 @@ db/data.yml
 db/schema.rb
 
 # test data
+db/datadump/projects.yml
 db/datadump/refinery_inquiries_inquiries.yml
 db/datadump/refinery_resources.yml
 db/datadump/refinery_roles.yml
