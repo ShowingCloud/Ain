@@ -1,3 +1,11 @@
+$('.checks').click(function(){
+	if($(this).prop('checked')==true){
+		$(this).parent().parent().find("textarea").prop("disabled", true);
+	}else{
+		$(this).parent().parent().find("textarea").prop("disabled", false);
+	}
+});
+
 function changeRows()
 {
 	if($("#memberInfoTab tbody").find("tr").length>1)
@@ -21,7 +29,6 @@ function register()
 {
 	if(!checkInput())
 	{
-		alert('fsdadf');
 		return;
 	}
 	
@@ -74,27 +81,30 @@ function register()
 }
 
 function checkInput()
-{
-	if ($('#project_name').val().length ==0) {
-		alert ("请输入项目名");
-		return false;
-	 } else if ($('#project_target').val().length == 0) {
-		alert ("请输入项目目的");
-		return false;
-	 } else if ($('#project_meaning').val().length == 0) {
-		alert ("请输入项目实际应用价值和指导意义");
-		return false;
-	 } else if ($('#project_schedule').val().length == 0) {
-		alert ("请输入项目计划与进度");
-		return false;
-	 } else if ($('#project_details').val().length == 0) {
-		alert ("请输入项目详情");
-		return false;
-	 } else if ($('#project_target').val().length == 0) {
-		alert ("请输入项目目的");
-		return false;
-	 } 
-	 return true;
+{	
+	var num = $('#memberCount').val();
+	for (var i = 1; i <= num; i++){
+		if ($('#memberInfoTab tbody tr:nth-child('+i+') #name0').val().length == 0) {
+			alert ("请输入组员"+i+"的姓名");
+			return false;
+		 } else if ($('#memberInfoTab tbody tr:nth-child('+i+') #school0').val().length == 0) {
+			alert ("请输入组员"+i+"的学校名称");
+			return false;
+		 }else if ($('#memberInfoTab tbody tr:nth-child('+i+') #major0').val().length == 0) {
+			alert ("请输入组员"+i+"的学院专业");
+			return false;
+		 }else if ($('#memberInfoTab tbody tr:nth-child('+i+') #email0').val().length == 0) {
+			alert ("请输入组员"+i+"的邮箱");
+			return false;
+		 }else if ($('#memberInfoTab tbody tr:nth-child('+i+') #qq0').val().length == 0) {
+			alert ("请输入组员"+i+"的QQ");
+			return false;
+		 }else if ($('#memberInfoTab tbody tr:nth-child('+i+') #mobile0').val().length == 0) {
+			alert ("请输入组员"+i+"的手机号码");
+			return false;
+		 }
+	 }
+	return true;
 }
 
 function clearForm()
