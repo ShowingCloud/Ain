@@ -8,7 +8,7 @@ function changeRows()
 	{
 		$("#memberInfoTab tbody tr:first-child").clone(true).appendTo( "#memberInfoTab" );
 		$("#memberInfoTab tbody tr:last-child #name0").val('');
-		$("#memberInfoTab tbody tr:last-child #gender0").val('true');
+		$("#memberInfoTab tbody tr:last-child #gender0").val('0');
 		$("#memberInfoTab tbody tr:last-child #school0").val('');
 		$("#memberInfoTab tbody tr:last-child #major0").val('');
 		$("#memberInfoTab tbody tr:last-child #email0").val('');
@@ -19,6 +19,12 @@ function changeRows()
 
 function register()
 {
+	if(!checkInput())
+	{
+		alert('fsdadf');
+		return;
+	}
+	
 	var projects = { 
 		"name0" : $('#memberInfoTab tbody tr:first-child #name0').val(),
 		"gender0" : $('#memberInfoTab tbody tr:first-child #gender0').val()==0 ? false:true,
@@ -50,6 +56,7 @@ function register()
 		"project_abstract" : $('#project_abstract').val(),
 		"project_details" : $('#project_details').val()
 	};
+	
 	$.ajax ({
 		url:		"/projects.json",
 		type:		"POST",
@@ -64,6 +71,30 @@ function register()
 	}).fail(function() {
 		alert ("Request failed");
 	});
+}
+
+function checkInput()
+{
+	if ($('#project_name').val().length ==0) {
+		alert ("请输入项目名");
+		return false;
+	 } else if ($('#project_target').val().length == 0) {
+		alert ("请输入项目目的");
+		return false;
+	 } else if ($('#project_meaning').val().length == 0) {
+		alert ("请输入项目实际应用价值和指导意义");
+		return false;
+	 } else if ($('#project_schedule').val().length == 0) {
+		alert ("请输入项目计划与进度");
+		return false;
+	 } else if ($('#project_details').val().length == 0) {
+		alert ("请输入项目详情");
+		return false;
+	 } else if ($('#project_target').val().length == 0) {
+		alert ("请输入项目目的");
+		return false;
+	 } 
+	 return true;
 }
 
 function clearForm()
