@@ -33,6 +33,28 @@
 		#productInfo table{
 			margin-top:10px;
 		}
+		#submitBtn{
+			color: white;
+			height: 30px;
+			width: 60px;
+			border: 0;
+			padding: 0;
+			border-radius: 5px;
+			cursor: pointer;
+			margin-left: 200px;
+			background-color: rgb(56, 205, 50);
+		}
+		#resetBtn{
+			color: white;
+			height: 30px;
+			width: 60px;
+			border: 0;
+			padding: 0;
+			border-radius: 5px;
+			cursor: pointer;
+			margin-left: 30px;
+			background-color: rgb(199, 205, 50);
+		}
 		</style>
 	</head>
 	<body>
@@ -174,8 +196,8 @@
 			</tr>
         </table> 
 		<div id='btnDiv'>
-			<input type='button' value='提交' onclick='register()'/>
-			<input type='button' value='清空' onclick='clearForm()'/>
+			<input type='button' id='submitBtn' value='提交' onclick='register()'/>
+			<input type='button' id='resetBtn' value='清空' onclick='clearForm()'/>
 		</div>
 		</div>
 		</form>
