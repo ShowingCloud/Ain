@@ -6,7 +6,7 @@
 			#containerDiv{
 				width:1080px;
 				margin:0 auto;
-				height:800px;
+				height:560px;
 			}
 			#headDiv{
 				height:291px;
@@ -18,9 +18,13 @@
 				width:1080px;
 				text-align:center;
 			}
+			#linkDiv a img{
+				border-radius:10px;
+			}
 			#footerSocial{
 				height:90px;
 				width:1080px;
+				margin: 0 auto;
 				background-color:#333437;
 			}
 			#footerSocialIcons{
@@ -34,7 +38,7 @@
 			}
 			#bottomDiv{
 				height:300px;
-				width:1080px;
+				width:900px;
 				background-color:#1F2022;
 			}
 			.site-info{
@@ -129,16 +133,25 @@
 			.footer-widget-three aside{
 				margin-top:0px;
 			}
+			body{
+				background-color:#D0D0D0;
+			}
 		</style>
 	</head>
 	<body>
+		<div style='background-color:#1F2022;width:100%;height:80px;margin-top:-10px;'>
+		<div style='height:70px;width:1080px;margin:0 auto;'>
+			<img style='margin-top: 7px;margin-left: 90px;' src='/assets/logo.png'>
+		</div>
+		</div>
 		<div id='containerDiv'>
-		<div style='height:50px;width:1080px;background-color:#1F2022;margin-top:-10px;'></div>
 		<div id='headDiv'><img src='/assets/title.png' style='height:292px;width:1080px;'></div>
 		<div id='linkDiv'>
-			<a href="/register" target='_blank'><img src='/assets/signup.png' style='height:50px;margin-top:100px;margin-right:20px;'></a>
+			<a href="/register" target='_blank'><img src='/assets/signup.png' style='height:50px;margin-top:100px;margin-right:200px;'></a>
 			<a href="http://forum.appcontest.showingcloud.com/" target='_blank'><img style='height:50px;margin-top:100px;' src='/assets/officailForum.png'></a>
 		</div>
+	</div>
+		<div style='width:100%;height:90px;background-color:#333437;text-align:center'>
 		<div id="footerSocial">
 				<ul id="footerSocialIcons" style='padding-left:0px;'>
 				
@@ -151,6 +164,9 @@
 					<li><a href="https://www.google.com/+showingcloud" target="_blank"><img src="http://cn.showingcloud.com/wp-content/themes/alexandria/images/gplus.png" title="google" /></a></li>
 				</ul>
 		</div>
+		</div>
+		<div style= 'width:100%;background-color:#1F2022;'>
+		<div style='width:900px;margin:0 auto;'>
 		<div id='bottomDiv'>
             <div class="site-info">
 				<h3 style=" margin-top: 0px;"><a href="http://cn.showingcloud.com/" style="text-decoration:none;">修酝软件</a></h3>
@@ -182,8 +198,8 @@
                     <aside id="meta" class="widget">
                         <h1 class="widget-title">Meta</h1>
                         <ul>
-                                                        <li><a href="http://cn.showingcloud.com/wp-login.php">Log in</a></li>
-                                                    </ul>
+                            <li><a href="http://cn.showingcloud.com/wp-login.php">Log in</a></li>
+                        </ul>
                     </aside>                                                                                
                                                                                 
                             
@@ -200,6 +216,7 @@
                                                                                 
                             
             </div>
+			</div>
 		</div>
 		</div>
 	</body>
