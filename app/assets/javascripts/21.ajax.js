@@ -74,7 +74,9 @@ function register()
 			captcha_key:	$('#captcha_key').val()
 		}
 	}).done (function (resp) {
-		alert ("Register success");
+		alert ("注册成功！");
+		location.href ='/home';
+		
 	}).fail(function() {
 		alert ("Request failed");
 	});
