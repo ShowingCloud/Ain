@@ -14,10 +14,9 @@
 			display:inline-block;
 		}
 		#containerDivReg{
-			height:1080px;
-			width:1080px;
+			height:900px;
+			width:960px;
 			margin:0 auto;
-			background-image: url(/assets/background.png);
 		}
 		#memberInfoTab{
 			display:inline-block;
@@ -59,17 +58,26 @@
 			float:right;
 			margin-right:50px;
 		}
+		#containerDivReg h2
+		{
+			color:#89C6B6;
+			padding-bottom:10px;
+			border-bottom: 1px solid black;
+		}
+		#memberInfoTab td input
+		{
+			text-align:center;
+		}
 		</style>
 	</head>
 	<body>
 	<form id='registerForm'>
+	<div style='width:100%;height:70px;margin-top:-10px;background-color:#1F2022;'>
+		<div style='width:960px;height:70px;margin:0 auto;text-align:center;'><img src='/assets/regTitle.png' style='margin-top:10px'><a href='/home' style='text-decoration:none;color:#B0B0B0;font-size:13px;'><span>返回首页</span></a></div>
+	</div>
 	<div id='containerDivReg'>
-		<h1 style='text-align:center;font-size:45px;margin:0px;padding-top:20px'>手机App比赛注册</h1>
-		<div id="logoDiv">
-			<a href='/home'><img src='assets/logo.png'></a>			
-		</div>
 		<div id="memberInfo">
-			<h3>成员信息</h3>
+			<h2>成员信息</h2>
 			<p>
 				<label class='preLabel' style='float:left'>队伍人数：</label>
 				<select class='selector' id='memberCount' onchange='changeRows()'>
@@ -99,17 +107,17 @@
 						<td><input id='name0' style="width:100px" type='text'/></td>
 						<td><select id='gender0'><option value='0'>男</option><option value='1'>女</option></select></td>
 						<td><input id='school0' type='text'/></td>
-						<td><input id='major0' type='text'/></td>
-						<td><input id='email0' type='text'/></td>
+						<td><input id='major0' type='text' style="width:130px"/></td>
+						<td><input id='email0' type='text' style="width:140px"/></td>
 						<td><input id='qq0' style="width:90px" type='text'/></td>
 						<td><input id='mobile0' style="width:90px" type='text'/></td>
 					</tr>
 				</tbody>
 			</table>
-			<label style='display: inline-block;float:right;margin-right:110px;font-weight:bolder;margin-top:25px;color:blue'>队长</label>
+			<label style='display: inline-block;float:right;margin-right:20px;font-weight:bolder;margin-top:25px;color:#63C9FF'>队长</label>
 		</div>
 		<div id='productInfo'>
-			<h3>项目内容</h3>
+			<h2>项目内容</h2>
 			<table class="content_tab" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td><label class='preLabel1'>申报类别：</label></td>
