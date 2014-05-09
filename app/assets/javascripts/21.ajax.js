@@ -33,27 +33,6 @@ function register()
 	}
 	
 	var projects = { 
-		"name0" : $('#memberInfoTab tbody tr:first-child #name0').val(),
-		"gender0" : $('#memberInfoTab tbody tr:first-child #gender0').val()==0 ? false:true,
-		"school0" : $('#memberInfoTab tbody tr:first-child #school0').val(),
-		"major0" : $('#memberInfoTab tbody tr:first-child #major0').val(),
-		"email0" : $('#memberInfoTab tbody tr:first-child #email0').val(),
-		"qq0" : $('#memberInfoTab tbody tr:first-child #qq0').val(),
-		"mobile0" : $('#memberInfoTab tbody tr:first-child #mobile0').val(),
-		"name1" : $('#memberInfoTab tbody tr:nth-child(2) #name0').val(),
-		"gender1" : $('#memberInfoTab tbody tr:nth-child(2) #gender0').val()==0 ? false:true,
-		"school1" : $('#memberInfoTab tbody tr:nth-child(2) #school0').val(),
-		"major1" : $('#memberInfoTab tbody tr:nth-child(2) #major0').val(),
-		"email1" : $('#memberInfoTab tbody tr:nth-child(2) #email0').val(),
-		"qq1" : $('#memberInfoTab tbody tr:nth-child(2) #qq0').val(),
-		"mobile1" : $('#memberInfoTab tbody tr:nth-child(2) #mobile0').val(),
-		"name2" : $('#memberInfoTab tbody tr:nth-child(3) #name0').val(),
-		"gender2" : $('#memberInfoTab tbody tr:nth-child(3) #gender0').val()==0 ? false:true,
-		"school2" : $('#memberInfoTab tbody tr:nth-child(3) #school0').val(),
-		"major2" : $('#memberInfoTab tbody tr:nth-child(3) #major0').val(),
-		"email2" : $('#memberInfoTab tbody tr:nth-child(3) #email0').val(),
-		"qq2" : $('#memberInfoTab tbody tr:nth-child(3) #qq0').val(),
-		"mobile2" : $('#memberInfoTab tbody tr:nth-child(3) #mobile0').val(),
 		"project_name" : $('#project_name').val(),
 		"is_tech" : $('#is_tech').val()==0 ? false:true,
 		"project_target" : $('#project_target').val(),
@@ -61,9 +40,26 @@ function register()
 		"project_schedule" : $('#project_schedule').val(),
 		"project_category" : $('#project_category').find("option:selected").text(), 
 		"project_abstract" : $('#project_abstract').val(),
-		"project_details" : $('#project_details').val()
+		"project_details" : $('#project_details').val(),
+		"name0" : $('#memberInfoTab tbody tr:first-child #name0').val(),
+		"gender0" : $('#memberInfoTab tbody tr:first-child #gender0').val()==0 ? false:true,
+		"school0" : $('#memberInfoTab tbody tr:first-child #school0').val(),
+		"major0" : $('#memberInfoTab tbody tr:first-child #major0').val(),
+		"email0" : $('#memberInfoTab tbody tr:first-child #email0').val(),
+		"qq0" : $('#memberInfoTab tbody tr:first-child #qq0').val(),
+		"mobile0" : $('#memberInfoTab tbody tr:first-child #mobile0').val()
 	};
-	
+	for(var i=1;i<$('#memberCount').val();i++)
+	{
+		j=i+1;
+		projects['name'+i] = $('#memberInfoTab tbody tr:nth-child('+j+') #name0').val();
+		projects['gender'+i] = $('#memberInfoTab tbody tr:nth-child('+j+') #gender0').val() == 0 ? false:true;
+		projects['school'+i] = $('#memberInfoTab tbody tr:nth-child('+j+') #school0').val();
+		projects['major'+i] = $('#memberInfoTab tbody tr:nth-child('+j+') #major0').val();
+		projects['email'+i] = $('#memberInfoTab tbody tr:nth-child('+j+') #email0').val();
+		projects['qq'+i] = $('#memberInfoTab tbody tr:nth-child('+j+') #qq0').val();
+		projects['mobile'+i] = $('#memberInfoTab tbody tr:nth-child('+j+') #mobile0').val();			
+	}
 	$.ajax ({
 		url:		"/projects.json",
 		type:		"POST",
@@ -75,7 +71,7 @@ function register()
 		}
 	}).done (function (resp) {
 		alert ("注册成功！");
-		location.href ='/home';
+		//location.href ='/home';
 		
 	}).fail(function() {
 		alert ("Request failed");
