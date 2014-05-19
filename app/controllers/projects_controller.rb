@@ -1,6 +1,7 @@
 class ProjectsController < ApplicationController
 
 	respond_to :json, :xml, :html
+	respond_to :csv, :xls, :only => [:index]
 
 	before_filter :checkadmin, :except => [:create, :new]
 	before_filter :checkcaptcha, :only => [:create]
@@ -9,7 +10,9 @@ class ProjectsController < ApplicationController
 	# GET /projects
 	def index
 		@projects = Project.all
-		respond_with @projects
+		respond_with @projects do |format|
+			format.csv { send_data Project.to_csv }
+		end
 	end
 
 
