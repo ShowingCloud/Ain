@@ -1,7 +1,7 @@
 class ProjectsController < ApplicationController
 
 	respond_to :json, :xml, :html
-	respond_to :csv, :xls, :only => [:index]
+	respond_to :csv, :only => [:index]
 
 	before_filter :checkadmin, :except => [:create, :new]
 	before_filter :checkcaptcha, :only => [:create]
