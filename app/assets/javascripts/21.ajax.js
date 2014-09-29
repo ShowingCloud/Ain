@@ -34,7 +34,6 @@ function register()
 	
 	var projects = { 
 		"project_name" : $('#project_name').val(),
-		"is_tech" : $('#is_tech').val()==0 ? false:true,
 		"project_target" : $('#project_target').val(),
 		"project_meaning" : $('#project_meaning').val(),
 		"project_schedule" : $('#project_schedule').val(),
